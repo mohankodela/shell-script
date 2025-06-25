@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Today's Date is: $(date)"
+echo "Today's Date is: $(DATE)"
