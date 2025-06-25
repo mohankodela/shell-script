@@ -2,8 +2,8 @@
 
 #Using Variables
 
-PERSON1=Mohan
-PERSON2=Krishna
+PERSON1=Raj
+PERSON2=Krish
 
 echo "$PERSON1: Hi $PERSON2, How are you?"
 echo "$PERSON2: Hi $PERSON1, I'm fine How are you?"
