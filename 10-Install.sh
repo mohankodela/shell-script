@@ -2,6 +2,10 @@
 
 ID=$(id -u)
 TIMESTAMP=$(date +%F-%H:%M:%S)
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 LOGFILE="/tmp/$0-$TIMESTAMP"
 
@@ -9,10 +13,10 @@ VALIDATE()
 {
     if [ $1 -ne 0 ]
     then
-        echo "Installing $2 is Failed"
+        echo -e "Installing $2 is $R Failed"
         exit 1
     else
-        echo "Installation of $2 is Success"
+        echo -e "Installation of $2 is $G Success"
     fi
 }
 
@@ -21,16 +25,16 @@ then
     echo "You are not a root user"
     exit 1
 else
-    echo "You are a root user"
+    echo -e "You are a $G root $N user"
 fi
 
-echo "Installing MySQL"
+echo -e "$Y Installing MySQL"
 
 yum install mysql -y &>> $LOGFILE
 
 VALIDATE $? "MySQL"
 
-echo "Installing GIT" 
+echo -e "$Y Installing GIT" 
 
 yum install git -y &>> $LOGFILE
 
