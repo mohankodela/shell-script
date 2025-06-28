@@ -6,7 +6,7 @@ echo "First Fruit is: ${FRUITS[0]}"
 
 echo "First Fruit is: ${FRUITS[1]}"
 
-echo "Arguments Passed: ${FRUITS[$@]}"
+echo "Arguments Passed: ${$@}"
 
 echo "How Many Arguments Passed: $#"
 
