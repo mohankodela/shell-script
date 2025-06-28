@@ -28,13 +28,13 @@ else
     echo -e "You are a $G root $N user"
 fi
 
-echo -e "$Y Installing MySQL"
+echo -e "$Y Installing MySQL $N"
 
 yum install mysql -y &>> $LOGFILE
 
 VALIDATE $? "MySQL"
 
-echo -e "$Y Installing GIT" 
+echo -e "$Y Installing GIT $N" 
 
 yum install git -y &>> $LOGFILE
 
