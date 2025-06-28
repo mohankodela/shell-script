@@ -33,3 +33,8 @@ yum install git -y
 
 VALIDATE $? "GIT"
 
+echo "Arguments Passed: $@"
+
+echo "How Many Arguments Passed: $#"
+
+echo "Script Name: $0"
