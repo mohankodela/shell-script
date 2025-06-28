@@ -12,7 +12,7 @@ fi
 
 echo "Installing MySQL"
 
-yum install mysql -y
+yum install mysqll -y
 
 if [ $? -ne 0 ]
 then
