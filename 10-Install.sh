@@ -1,6 +1,9 @@
 #!/bin/bash
 
 ID=$(id -u)
+TIMESTAMP=$(date +%F:%H:%M:%S)
+
+LOGFILE="/tmp/$0-$TIMESTAMP"
 
 VALIDATE()
 {
@@ -23,18 +26,12 @@ fi
 
 echo "Installing MySQL"
 
-yum install mysql -y
+yum install mysql -y &>> $LOGFILE
 
 VALIDATE $? "MySQL"
 
-echo "Installing GIT"
+echo "Installing GIT" &>> $LOGFILE
 
 yum install git -y
 
 VALIDATE $? "GIT"
-
-echo "Arguments Passed: $@"
-
-echo "How Many Arguments Passed: $#"
-
-echo "Script Name: $0"
