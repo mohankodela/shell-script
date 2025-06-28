@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ID=$(id -u)
-TIMESTAMP=$(date +%F:%H:%M:%S)
+TIMESTAMP=$(date +%F%H%M%S)
 
 LOGFILE="/tmp/$0-$TIMESTAMP"
 
@@ -30,8 +30,8 @@ yum install mysql -y &>> $LOGFILE
 
 VALIDATE $? "MySQL"
 
-echo "Installing GIT" &>> $LOGFILE
+echo "Installing GIT" 
 
-yum install git -y
+yum install git -y &>> $LOGFILE
 
 VALIDATE $? "GIT"
