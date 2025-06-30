@@ -11,9 +11,29 @@ LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 echo "Script started executing at $TIMESTAMP" &>> $LOGFILE
 
+VALIDATE(){
+
+    if [ $? -ne 0 ]
+    then
+        echo -e "$2 is $R FAILED $N"
+    else
+        echo -e "$2 is $G SUCCESS $N"
+}
+
 if [ $ID -ne 0 ]
 then
     echo -e "$R Your are not root user $N"
 else
     echo -e "$G You are root user $N"
 fi
+
+for package in $@
+do
+    yum installed $package
+    if [ $? -ne 0 ]
+    then
+        yum install $package -y
+        VALIDATE $? "Installation of $package"
+    else echo -e"$Y $package is already Installed $N"
+    fi
+done
