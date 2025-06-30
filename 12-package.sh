@@ -6,7 +6,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-if [ $ID -ne 0]
+if [ $ID -ne 0 ]
 then
     echo -e "$R Your are not root user $N"
 else
