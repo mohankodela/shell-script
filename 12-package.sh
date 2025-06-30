@@ -1,10 +1,10 @@
 #!/bin/bash
 
 ID=$(id -u)
-R=\e[32m
-G=\e[33m
-Y=\e[34m
-N=\e[0m
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 if [ $ID -ne 0]
 then
