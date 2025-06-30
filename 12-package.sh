@@ -35,6 +35,6 @@ do
     then
         yum install $package -y
         VALIDATE $? "Installation of $package"
-    else echo -e"$Y $package is already Installed $N"
+    else echo -e "$Y $package is already Installed $N"
     fi
 done
