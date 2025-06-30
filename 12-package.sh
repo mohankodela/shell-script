@@ -24,6 +24,7 @@ VALIDATE(){
 if [ $ID -ne 0 ]
 then
     echo -e "$R Your are not root user $N"
+    exit 1
 else
     echo -e "$G You are root user $N"
 fi
@@ -35,6 +36,7 @@ do
     then
         yum install $package -y &>> $LOGFILE
         VALIDATE $? "Installation of $package"
-    else echo -e "$Y $package is already Installed $N"
+    else 
+        echo -e "$Y $package is already Installed $N"
     fi
 done
