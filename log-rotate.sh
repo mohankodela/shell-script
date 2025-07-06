@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOURCE_DIR="/tmp/shellscript-logs"
+SOURCE_DIR="/tmp/shell-logs"
 
 R="\e[31m"
 G="\e[32m"
@@ -10,6 +10,7 @@ N="\e[0m"
 if [ ! -d $SOURCE_DIR ] # ! denotes opposite
 then
     echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
+    exit 1
 fi
 
 FILES_TO_DELETE=$(find $SOURCE_DIR -type f -mtime +14 -name "*.log")
