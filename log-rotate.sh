@@ -7,7 +7,7 @@ then
     echo -e "Source directory $SORCE_DIR doesn't exists"
 fi
 
-FILES_TO_DELETE=$( find $SORCE_DIR -type f -mtime +14 -name "*.log" )
+FILES_TO_DELETE=$(find $SORCE_DIR -type f -mtime +14 -name "*.log")
 
 while IFS= read -r line
 do
